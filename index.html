@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Autoplay Sound</title>
+		
+		<link rel="stylesheet" href="style.css">
+		<script type="text/javascript" src="soundtest.js"></script>
+	</head>
+	<body>
+		<div id="content">
+			<div class="title">Autoplay Sound</div>
+			<hr />
+			
+			<p id="result">Testing autoplay...</p>
+			
+			<p>
+				Manually play sound? <button id="manual">Play</button>
+			</p>
+			
+			<p>
+				Retry autoplaying sound? <button id="retry">Retry</button>
+			</p>
+			
+			<audio id="test-sound" src="sound.mp3"></audio>
+			
+			<div class="heading">What is this?</div>
+			<hr />
+			
+			<p>
+				This page plays a silent sound file when loaded, and when the button above is clicked.
+			</p>
+			
+			<p>
+				In recent years, browsers have started prohibiting websites from playing sound prior to user interaction. This is a
+				good thing, since it prevents websites from suddenly playing loud noises without the user's permission.
+				However, this also means your website may have unexpected behavior if it attempts to play sound when the page loads.
+			</p>
+			
+			<p>
+				Different browsers handle autoplay permission differently; Chrome keeps it under the hood by internally figuring out
+				whether it trusts a website to autoplay sound.
+			</p>
+			
+			<p>
+				On the other hand, Firefox explicitly has a permission for whether autoplay should be allowed, similar to camera and
+				microphone permissions. If you are currently using Firefox, click the permissions button to the left of the address bar,
+				and grant this website permission to autoplay sound; the autoplay test above should then succeed.
+			</p>
+			
+			<div class="heading">How can I make my website stop breaking?</div>
+			<hr />
+			
+			<p>
+				Simply try/catch the code where you try to autoplay sound; the error messages are predictable, and checking for
+				&quot;NotAllowedError&quot; should be sufficient. If the user is using Firefox, it is worth suggesting
+				them to grant permission to autoplay sound. If they are using Chrome, then just pray that Google eventually
+				whitelists your website so that it can autoplay.
+			</p>
+			
+			<p>
+				If it is necessary to work around the inability to autoplay sound, simply tell the user to click the page; any
+				form of clicking the page is enough for sound to be played, even if the click itself did not lead to the sound
+				being played.
+			</p>
+		</div>
+	</body>
+</html>
